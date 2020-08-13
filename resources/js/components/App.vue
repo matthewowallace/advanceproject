@@ -1,6 +1,7 @@
 <template>
    <main>
        <MainNav />
+       <getStarted />
        <!-- <Body/> -->
           <!-- <canvas class="js-mouse"></canvas> -->
           <div class="logo-title">
@@ -52,11 +53,13 @@
 import UIkit from 'uikit';
 import MainNav from './MainNav';
 import Body from "./Body";
+import getStarted from "./getStarted";
 export default {
 
       components :{
          MainNav,
          Body,
+         getStarted,
       },
 
       mounted() {
@@ -67,11 +70,11 @@ export default {
         r.setAttribute('src', 'js/logo.js')
         document.head.appendChild(r)
 
-        var util = UIkit.util;
-            util.on(document, 'DOMContentLoaded', function () {
-            var modalEl = util.$('#modal-example');
-            UIkit.modal(modalEl).show();
-        });
+        // var util = UIkit.util;
+        //     util.on(document, 'DOMContentLoaded', function () {
+        //     var modalEl = util.$('#modal-example');
+        //     UIkit.modal(modalEl).show();
+        // });
     },
 
 }
@@ -110,11 +113,11 @@ body {
 }
 body::-webkit-scrollbar-track {
   background: var(--scrollbarBG);
-  background-color: #fff;
+  background-color: #0B0E13;
 }
 body::-webkit-scrollbar-thumb {
   background-color: var(--thumbBG) ;
-  background-color: rgba(150,30,70,1);
+  background-color: #452c63;
   border-radius: 0px;
   border: 0px solid var(--scrollbarBG);
 }

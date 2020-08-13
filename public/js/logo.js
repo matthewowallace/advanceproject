@@ -3,14 +3,14 @@ const ctx = canvas.getContext('2d');
 canvas.width = window.innerWidth;
 canvas.height = window.innerHeight;
 let particleArray = [];
-let adjustX = 3;
+let adjustX = 20;
 let adjustY = 4;
 
 //handle mouse move
 const mouse ={
     x:null,
     y:null,
-    radius: 90
+    radius: 95
 }
 
 window.addEventListener('mousemove', function(event){
@@ -19,8 +19,8 @@ window.addEventListener('mousemove', function(event){
 })
 
 ctx.fillStyle = 'white';
-ctx.font = '30px Haettenschweiler';
-ctx.fillText('Youth Creator', 0, 30);
+ctx.font = '20px Oxanium';
+ctx.fillText('Lets Create', 0, 30);
 const TextCoordinates = ctx.getImageData(0,0,200,200);
 
 
@@ -31,18 +31,18 @@ class Particle{
         this.size = 2;
         this.baseX = this.x;
         this.baseY= this.y;
-        this.density = (Math.random() * 300) + 5;
+        this.density = (Math.random() * 30) + 5;
     }
 
     draw(){
-        ctx.strokeStyle = 'rgba(150,230,170,0.6)';
-        ctx.lineWidth = 2;
-        ctx.fillStyle = 'rgba(250,130,70,1)';
+        // ctx.strokeStyle = 'rgba(150,230,170,0.6)';
+        // ctx.lineWidth = 2;
+        ctx.fillStyle = '#5D8AA8';
         ctx.beginPath();
         ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
         ctx.closePath();
         ctx.fill();
-        ctx.stroke();
+       // ctx.stroke();
     }
     update(){
         let dx = mouse.x - this.x;
@@ -72,6 +72,7 @@ class Particle{
 
     }
 }
+
 function init(){
     particleArray = [];
     // for(let i = 0; i < 1000; i++){
@@ -92,8 +93,7 @@ function init(){
 }
 
 init();
-console.log(particleArray);
-
+// console.log(particleArray);
 
 function animate(){
         ctx.clearRect(0,0, canvas.width, canvas.height);
@@ -104,7 +104,6 @@ function animate(){
         connect();
         requestAnimationFrame(animate);
 }
-
 animate();
 
 function connect(){
@@ -114,11 +113,11 @@ function connect(){
             let dx = particleArray[a].x - particleArray[b].x;
             let dy = particleArray[a].y - particleArray[b].y;
             let distance = Math.sqrt(dx * dx + dy * dy);
-            if( distance < 34){
+            if( distance < 15){
                  opacityValue = 1 - (distance/0.8);
                  ctx.strokeStyle = 'rgba(255,255,255,' + opacityValue + ')';
-                 ctx.strokeStyle = 'rgba(150,30,70,0.6)';
-                 ctx.lineWidth = (Math.random() * 2) - 5;
+                 ctx.strokeStyle = '#452c63';
+                 ctx.lineWidth = 3;
                  ctx.beginPath();
                  ctx.moveTo(particleArray[a].x, particleArray[a].y);
                  ctx.lineTo(particleArray[b].x, particleArray[b].y);
