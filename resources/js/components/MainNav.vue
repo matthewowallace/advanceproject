@@ -12,7 +12,14 @@
             =============================== -->
             <nav class="navbar">
             <div class="menu">
-                <ion-icon name="ios-menu"></ion-icon>
+                    <ion-icon name="ios-menu"></ion-icon>
+                     <div class="dropdown-content">
+                        <a>About US</a>
+                        <hr>
+                        <a>Service Network</a>
+                        <hr>
+                        <a>Contact Us</a>
+                    </div>
             </div>
             <div class="lang"><a>Signin /Create Account</a></div>
             <div class="lang">eng</div>
@@ -26,9 +33,9 @@
             =============================== -->
             <div class="media">
             <ul>
-                <li>facebook</li>
-                <li>instagram</li>
-                <li>twitter</li>
+                <li><a>facebook</a></li>
+                <li><a>instagram</a></li>
+                <li><a>twitter</a></li>
             </ul>
             </div>
 
@@ -53,9 +60,33 @@
             </div>
 
             <div class="slider">
-                <h1> Create </h1>
+
+                <div class="uk-position-relative uk-visible-toggle uk-light" tabindex="-1" uk-slider="center: true">
+                    <ul class="uk-slider-items uk-grid">
+                        <li class="uk-width-1-1">
+                            <div class="uk-panel">
+                                <h1>Create</h1>
+                            </div>
+                        </li>
+                        <li class="uk-width-1-1">
+                            <div class="uk-panel">
+                                <h1>Innovate</h1>
+                            </div>
+                        </li>
+                        <li class="uk-width-1-1">
+                            <div class="uk-panel">
+                                <h1>Grow</h1>
+                            </div>
+                        </li>
+                    </ul>
+
+                    <a class="uk-position-center-left uk-position-small uk-hidden-hover" href="#" uk-slidenav-previous uk-slider-item="previous"></a>
+                    <a class="uk-position-center-right uk-position-small uk-hidden-hover" href="#" uk-slidenav-next uk-slider-item="next"></a>
+
+                 </div>
+
                 <div class="getstarted">
-                    <a>Get Started</a>
+                   <a>Get Started</a>
                 </div>
             </div>
 
@@ -83,6 +114,58 @@ export default {
 </script>
 
 <style scoped>
+
+/* Menu
+=========================== */
+
+.menu {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 0px 16px 0px rgba(0,0,0,0.5);
+  padding: 10px 5px;
+  z-index: 1;
+  border-radius: 5px;
+}
+
+hr{
+    margin: 4px 15px;
+    opacity: 0.6;
+}
+
+.dropdown-content a{
+    font-size:10px;
+    color:#303030;
+    transition: 1s;
+    margin:10px;
+    text-transform: uppercase;
+}
+
+.dropdown-content a:hover{
+   letter-spacing: 1px;
+}
+
+.menu:hover .dropdown-content {
+  display: block;
+}
+
+
+
+button{
+    background-color: transparent;
+    box-shadow: none;
+    border:none;
+}
+
+.menu button:hover{
+
+}
 
 .nav-section{
   font-family: 'Poppins';
@@ -153,10 +236,14 @@ ul {
     position: absolute;
     top: 300px;
     left: 50%;
+    overflow: hidden;
+    width: 800px;
+    height:300px;
 }
 
 .slider h1{
-    font-size: 270px;
+    font-size: 200px;
+    text-align: center;
 }
 
 .text h1 {
@@ -265,7 +352,7 @@ ul {
 =========================== */
 .sponsor {
   position: absolute;
-  right: 100px;
+  right: 2px;
   bottom: 100px;
   text-align: center;
 }
@@ -322,8 +409,12 @@ a{
 }
 
 .lang a:hover{
-    /* color: #452c63 !important; */
-    letter-spacing: 1px;
+     color: #452c63 !important;
+
+}
+
+.media a:hover{
+    color: #452c63;
 }
 
 

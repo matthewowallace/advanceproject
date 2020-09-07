@@ -3,8 +3,8 @@ const ctx = canvas.getContext('2d');
 canvas.width = window.innerWidth;
 canvas.height = window.innerHeight;
 let particleArray = [];
-let adjustX = 20;
-let adjustY = 4;
+let adjustX = 10;
+let adjustY = 10;
 
 //handle mouse move
 const mouse ={
@@ -20,7 +20,7 @@ window.addEventListener('mousemove', function(event){
 
 ctx.fillStyle = 'white';
 ctx.font = '20px Oxanium';
-ctx.fillText('Lets Create', 0, 30);
+ctx.fillText('WHO WE ARE', 0, 30);
 const TextCoordinates = ctx.getImageData(0,0,200,200);
 
 

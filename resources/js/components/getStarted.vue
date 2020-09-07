@@ -39,12 +39,9 @@ $action-color: $green;
     animation: hue-rotate 10s linear infinite;
 }
 
-.overlay{
-    animation: hue-rotate 10s linear infinite;
-}
 
 #logo-move{
-    animation: hue-rotate 10s linear infinite;
+     animation: hue-rotate 10s linear infinite;
 }
 
 // .button {
