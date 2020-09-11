@@ -11,15 +11,8 @@
             <!-- NAVBAR
             =============================== -->
             <nav class="navbar">
-            <div class="menu">
+            <div class="menu" type="button" uk-toggle="target: #offcanvas-push">
                     <ion-icon name="ios-menu"></ion-icon>
-                     <div class="dropdown-content">
-                        <a>About US</a>
-                        <hr>
-                        <a>Service Network</a>
-                        <hr>
-                        <a>Contact Us</a>
-                    </div>
             </div>
             <div class="lang"><a>Signin /Create Account</a></div>
             <div class="lang">eng</div>
@@ -27,6 +20,50 @@
                 <ion-icon name="ios-search"></ion-icon>
             </div>
             </nav>
+
+
+            <div id="offcanvas-push" uk-offcanvas="mode: push; overlay: true">
+              <div class="uk-offcanvas-bar">
+
+                  <button class="uk-offcanvas-close" type="button" uk-close></button>
+
+
+                  <h3>YOUTH CREATOR</h3>
+
+                  <p>Young Creators  expects to captivate the interest of young upcoming artiste and creators who are seeking an opportunity to join the Media and Entertainment Economy, interact with senior experts who share the same interest and produce quality content together</p>
+                  <div class="nav-menu">
+                     <h3>NAVIGATION</h3>
+                      <ul>
+                         <li>
+                             <img  src="../../assets/icons/color-palette-outline.svg" alt="aboutus icon">
+                             <a> About Us </a>
+                         </li>
+                         <li>
+                              <img  src="../../assets/icons/call-outline.svg" alt="contact icon">
+                             <a> Contact Us </a>
+                        </li>
+                         <li>
+                               <img  src="../../assets/icons/earth-outline.svg" alt="service icon">
+                             <a> Services </a>
+                        </li>
+                      </ul>
+                  </div>
+                       <div class="nav-menu">
+                     <h3>Terms & Policy</h3>
+                      <ul>
+                         <li class="term">
+                             <a> Terms & Conditions </a>
+                         </li>
+                         <li class="term">
+                             <a> Policy </a>
+                        </li>
+                      </ul>
+                  </div>
+                   <div class="nav-menu">
+                     <p>Copyright @ 2020</p>
+                  </div>
+              </div>
+          </div>
 
 
             <!-- SOCIAL MEDIA
@@ -39,7 +76,6 @@
             </ul>
             </div>
 
-
             <!-- TEXT
             =============================== -->
             <div class="text">
@@ -48,10 +84,10 @@
             </h1>
             <h2>Creator</h2>
             <h3>
-                <span class="hidetext">2020<br> duality</span>
+                <span class="hidetext">2020<br></span>
             </h3>
             <p>
-                <span class="hidetext">
+                <span class="hidetext subtext">
                 Lorem ipsum dolor sit amet consectetur, adipisicing elit. Unde quis, delectus facere
                 neque sunt commodi quae
                 culpa dolores doloribus magnam?
@@ -60,7 +96,6 @@
             </div>
 
             <div class="slider">
-
                 <div class="uk-position-relative uk-visible-toggle uk-light" tabindex="-1" uk-slider="center: true">
                     <ul class="uk-slider-items uk-grid">
                         <li class="uk-width-1-1">
@@ -82,12 +117,10 @@
 
                     <a class="uk-position-center-left uk-position-small uk-hidden-hover" href="#" uk-slidenav-previous uk-slider-item="previous"></a>
                     <a class="uk-position-center-right uk-position-small uk-hidden-hover" href="#" uk-slidenav-next uk-slider-item="next"></a>
-
                  </div>
-
-                <div class="getstarted">
-                   <a>Get Started</a>
-                </div>
+                     <div class="getstarted">
+                <a>Get Started</a>
+             </div>
             </div>
 
             <!-- SPONSOR
@@ -96,7 +129,6 @@
             <!-- <img src="./images/sponsor-logo.png" alt=""> -->
             <p>Youth Creator 2020</p>
             </div>
-
 
             <!-- DISTORTION
             =============================== -->
@@ -109,11 +141,62 @@
 <script>
 
 export default {
-
+  data:()=>{
+    return {
+        // icons:[
+        //    '/assets/icons.color-palette-outline.svg',
+        // ]
+    }
+}
 }
 </script>
 
 <style scoped>
+
+/* Nav Menu
+=========================== */
+.uk-offcanvas-bar h3{
+    text-align: center;
+    margin-top: 25px;
+}
+
+.uk-offcanvas-bar p{
+    text-align: center;
+}
+
+.nav-menu{
+    margin-top: 70px;
+}
+
+.nav-menu ul{
+    display: block;
+}
+
+.nav-menu ul li{
+    margin-top: 25px;
+}
+
+.nav-menu ul li img{
+    width: 20px;
+    height: 20px;
+    margin-left: 40px;
+}
+
+.nav-menu ul li a{
+  margin-left: 20px;
+}
+
+.nav-menu ul li a:hover{
+    letter-spacing: 2px;
+}
+
+.nav-menu .term{
+    text-align: center;
+}
+
+.nav-menu .term a{
+    margin-left: -35px;
+}
 
 /* Menu
 =========================== */
@@ -155,8 +238,6 @@ hr{
   display: block;
 }
 
-
-
 button{
     background-color: transparent;
     box-shadow: none;
@@ -174,7 +255,6 @@ button{
   overflow: hidden;
   color:#c9c9c9;
 }
-
 
 ul {
   list-style: none;
@@ -204,7 +284,6 @@ ul {
   text-transform: uppercase;
 }
 
-
 /* SOCIAL MEDIA
 =========================== */
 .media ul {
@@ -232,17 +311,22 @@ ul {
   transform: rotate(-90deg);
 }
 
+.subtext{
+  transform: rotate(90deg);
+  margin-left: 15px;
+}
+
 .slider {
     position: absolute;
-    top: 300px;
-    left: 50%;
+    top: 600px;
+    left: 73%;
     overflow: hidden;
-    width: 800px;
-    height:300px;
+    width: 500px;
+    height:200px;
 }
 
 .slider h1{
-    font-size: 200px;
+    font-size: 100px;
     text-align: center;
 }
 
@@ -325,16 +409,21 @@ ul {
   font-size: 12px;
   margin-top: 30px;
   font-weight: 500;
-
   position: relative;
-  overflow: hidden;
-  height: 110px;
+  height: 210px;
 }
 .text p .hidetext {
   position: absolute;
 }
 
 /* slider */
+
+.getstarted{
+    position: relative;
+    margin-top: 40px;
+    margin-left: 160px;
+    z-index: 1;
+}
 
 .getstarted a{
     padding: 10px 55px;
@@ -431,6 +520,14 @@ a{
         -ms-filter: hue-rotate(360deg);
         filter: hue-rotate(360deg);
       }
+}
+
+/* Off Canvas
+=========================== */
+
+.uk-offcanvas-bar{
+    background-color: #452c63;
+    animation: hue-rotate 10s linear infinite;
 }
 
 </style>

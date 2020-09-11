@@ -1,14 +1,14 @@
 import Vue from 'vue';
 import Router from 'vue-router';
-import Welcome from './views/Welcome.vue';
+import Login from './views/Auth/Login.vue';
 
 Vue.use(Router);
 
 const routes =[
     {
-        path: '/',
-        name: 'welcome',
-        component: Welcome
+        path: '/login',
+        name: 'Login',
+        component: Login
     }
 ]
 
