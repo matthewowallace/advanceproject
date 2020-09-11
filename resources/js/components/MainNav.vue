@@ -27,6 +27,7 @@
 
                   <button class="uk-offcanvas-close" type="button" uk-close></button>
 
+                  <div class="brand-logo"><img src="../../assets/logo/yc-logo.svg" alt="logo"></div>
 
                   <h3>YOUTH CREATOR</h3>
 
@@ -155,6 +156,11 @@ export default {
 
 /* Nav Menu
 =========================== */
+.brand-logo{
+  max-width: 150px;
+  margin-left: 55px;
+}
+
 .uk-offcanvas-bar h3{
     text-align: center;
     margin-top: 25px;
