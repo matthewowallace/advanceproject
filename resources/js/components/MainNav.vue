@@ -1,7 +1,7 @@
 <template>
     <div class="nav-section">
       <div class="wrapper">
-
+            <router-view></router-view>
             <!-- OVERLAY
             =============================== -->
             <div class="overlay first"></div>
@@ -14,7 +14,9 @@
             <div class="menu" type="button" uk-toggle="target: #offcanvas-push">
                     <ion-icon name="ios-menu"></ion-icon>
             </div>
-            <div class="lang"><a>Signin /Create Account</a></div>
+            <router-link to="/login" exact>
+                 <div class="lang"><a>Signin /Create Account</a></div>
+            </router-link>
             <div class="lang">eng</div>
             <div class="search">
                 <ion-icon name="ios-search"></ion-icon>
@@ -89,9 +91,9 @@
             </h3>
             <p>
                 <span class="hidetext subtext">
-                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Unde quis, delectus facere
-                neque sunt commodi quae
-                culpa dolores doloribus magnam?
+                   <blockquote>
+                      The Question isn't Who is Going To Let Me; It's Who is Going To Stop Me <br>- Ayn Rand
+                   </blockquote>
                 </span>
             </p>
             </div>
@@ -153,6 +155,18 @@ export default {
 </script>
 
 <style scoped>
+
+blockquote::before {
+  content: open-quote;
+}
+blockquote::after {
+  content: close-quote;
+}
+blockquote {
+  quotes: "“" "”" "‘" "’";
+  color: #fff;
+  font-size: 14px;
+}
 
 /* Nav Menu
 =========================== */

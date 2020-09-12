@@ -1,7 +1,8 @@
 <template>
    <main>
-       <MainNav />
-       <getStarted />
+       <!-- <MainNav /> -->
+       <!-- <getStarted /> -->
+       <router-view></router-view>
    </main>
 </template>
 

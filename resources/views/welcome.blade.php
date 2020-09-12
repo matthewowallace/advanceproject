@@ -19,7 +19,9 @@
         <script src="https://unpkg.com/ionicons@5.1.2/dist/ionicons.js"></script>
     </head>
     <body>
-        <div id="app"></div>
+        <div id="app">
+            <App></App>
+        </div>
 
         <!-- UIkit JS -->
         <script src="https://cdn.jsdelivr.net/npm/uikit@3.5.5/dist/js/uikit.min.js"></script>
