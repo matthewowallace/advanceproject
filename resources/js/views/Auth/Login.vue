@@ -63,7 +63,7 @@ export default {
         display: flex;
         flex-basis: 30%;
         flex-grow: 1;
-        padding: 30px;
+        padding: 70px;
         background-image: url('../../../assets/paint.png');
          background-size:cover;
          background-repeat: no-repeat;
@@ -74,9 +74,9 @@ export default {
     }
 
     .sign--form{
-        /* border-radius: 30px; */
         flex-wrap: wrap;
         flex-basis: 100%;
+        background-color: #000;
     }
 
     .sign-header{
