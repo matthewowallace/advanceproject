@@ -1,7 +1,17 @@
 <template>
-    <div>
+    <div class="wrapper">
+
+          <!-- OVERLAY
+            =============================== -->
+         <div class="overlay first-1"></div>
+         <div class="overlay second-1"></div>
+         <div class="overlay third-1"></div>
+
         <div class="login">
             <div class="login-info">
+                 <router-link to="/" exact>
+                <div class="brand-logo"><img src="../../../assets/logo/YCv2.png" alt="logo"></div>
+                 </router-link>
                 <div class="info">
                     <h3 class="info-1">LET GET:</h3>
                     <h3 class="info-2">CONNECTED</h3>
@@ -19,21 +29,24 @@
             <div class="login-form">
                 <div class="sign--form">
                     <h3 class="sign-header">Welcome</h3>
+                    <div class="line"></div>
                     <p class="sign-para">Sign in to continue to our application</p>
                     <form class="form-1">
                         <div class="input-form">
-                            <input>
+                            <input placeholder="Enter your email address">
+                            <img src="../../../assets/icons/person-circle-outline.svg" alt="user-icon">
                         </div>
                         <div class="input-form">
-                            <input>
+                            <input placeholder="Enter your Password" type="password">
+                            <img src="../../../assets/icons/eye-outline.svg" alt="user-icon">
                         </div>
                        <div class="forgot">
-                           <a>Forgot Password</a>
+                           <a>Forgot Password ?</a>
                         </div>
                         <div class="login-btn">
                             <button>Sign in</button>
                         </div>
-                         <div class="Signup"><p>Dont have an account</p><a>Sign up</a></div>
+                         <div class="Signup"><p>Dont have an account <a>Sign up</a> </p></div>
                     </form>
                 </div>
             </div>
@@ -44,19 +57,40 @@
 
 <script>
 export default {
+     mounted: function(){
 
+            TweenMax.to(".first-1", 1.5, {
+              delay: .5,
+              left: "-100%",
+              ease: Expo.easeInOut
+            });
+
+            TweenMax.to(".second-1", 1.5, {
+              delay: .7,
+              left: "-100%",
+              ease: Expo.easeInOut
+            });
+
+            TweenMax.to(".third-1", 1.5, {
+              delay: .9,
+              left: "-100%",
+              ease: Expo.easeInOut
+            });
+
+     },
 }
 </script>
 <style scoped>
     .login{
         display: flex;
         flex-wrap: wrap;
-        background-color: #fff;
+        background-color: #f5f6ff;
     }
     .login-info{
         display: flex;
         flex-basis: 70%;
         flex-grow: 2;
+        position: relative;
     }
 
     .login-form{
@@ -64,9 +98,9 @@ export default {
         flex-basis: 30%;
         flex-grow: 1;
         padding: 70px;
-        background-image: url('../../../assets/paint.png');
+        /* background-image: url('../../../assets/paint.png');
          background-size:cover;
-         background-repeat: no-repeat;
+         background-repeat: no-repeat; */
     }
 
     .info{
@@ -76,14 +110,14 @@ export default {
     .sign--form{
         flex-wrap: wrap;
         flex-basis: 100%;
-        background-color: #000;
+        border: 5px solid #303030;
     }
 
     .sign-header{
         flex-basis: 100%;
         text-align: center;
         font-size: 50px;
-        color: #fff;
+        color: #303030;
         margin: 0 45px;
         margin-top: 30%;
 
@@ -93,7 +127,7 @@ export default {
         flex-basis: 100%;
         text-align: center;
         font-size: 16px;
-        color: #fff;
+        color: #686868;
         margin-top: 10px;
     }
 
@@ -103,36 +137,41 @@ export default {
         margin-top: 60px;
     }
 
-    input{
-        padding: 10px 40px;
-        margin: 10px 0;
-        width: 60%;
-    }
-
     .login-btn button{
        padding: 10px 40px;
        width: 60%;
-       background-color: #fff;
+       background-color:#303030;
        transition: 1s ease-in-out;
-       color:  #452c63;;
+       color:  #fff;
+       font-weight: 500;
+       border-radius: 6px;
     }
 
     .login-btn button:hover{
-        padding: 10px 55px;
         letter-spacing: 2px;
+        transform: translateY(-3px);
+        box-shadow: 0px 3px 6px 0px rgba(0, 0, 0, 0.1), 0px 1px 3px 0px rgba(0, 0, 0, 0.08);
     }
 
     .forgot{
         margin: 25px 0;
+        margin-left: 30%;
     }
 
     .forgot a{
-        color: #fff;
+        color: #686868;
     }
 
     .Signup{
          margin-top:30%;
-         color: #fff;
+         color: #a73a3a;
+    }
+    .Signup p{
+        color:#686868;
+    }
+    .Signup p a{
+        color: #a73a3a;
+        font-size: 20px;
     }
 
     .info-1{
@@ -179,5 +218,50 @@ export default {
         letter-spacing: 1px;
     }
 
+    .overlay {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0%;
+        z-index: 99;
+        animation: hue-rotate 10s linear infinite;
+    }
+
+    .first-1 {
+        background:#452c63;
+    }
+
+    .second-1 {
+        background:#452c63;
+        left: 33.3%;
+    }
+
+    .third-1 {
+        background: #452c63;
+        left: 66.6%;
+    }
+
+    .brand-logo{
+        max-width: 50px;
+        position: absolute;
+        top: 3%;
+        left: 7%;
+        animation: hue-rotate 10s linear infinite;
+    }
+
+    @keyframes hue-rotate {
+      from {
+        -webkit-filter: hue-rotate(0);
+        -moz-filter: hue-rotate(0);
+        -ms-filter: hue-rotate(0);
+        filter: hue-rotate(0);
+      }
+      to {
+        -webkit-filter: hue-rotate(360deg);
+        -moz-filter: hue-rotate(360deg);
+        -ms-filter: hue-rotate(360deg);
+        filter: hue-rotate(360deg);
+      }
+}
 
 </style>

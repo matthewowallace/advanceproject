@@ -29,7 +29,7 @@
 
                   <button class="uk-offcanvas-close" type="button" uk-close></button>
 
-                  <div class="brand-logo"><img src="../../assets/logo/yc-logo.svg" alt="logo"></div>
+                  <div class="brand-logo"><img src="../../assets/logo/YCv2.png" alt="logo"></div>
 
                   <h3>YOUTH CREATOR</h3>
 
@@ -121,9 +121,11 @@
                     <a class="uk-position-center-left uk-position-small uk-hidden-hover" href="#" uk-slidenav-previous uk-slider-item="previous"></a>
                     <a class="uk-position-center-right uk-position-small uk-hidden-hover" href="#" uk-slidenav-next uk-slider-item="next"></a>
                  </div>
-                     <div class="getstarted">
-                <a>Get Started</a>
-             </div>
+                  <router-link to="/login" exact>
+                    <div class="getstarted">
+                        <a>Get Started</a>
+                    </div>
+                  </router-link>
             </div>
 
             <!-- SPONSOR
@@ -144,21 +146,107 @@
 <script>
 
 export default {
-  data:()=>{
-    return {
-        // icons:[
-        //    '/assets/icons.color-palette-outline.svg',
-        // ]
-    }
-}
+
+  mounted: function(){
+     TweenMax.to('.first', 1.5, {
+              delay: .5,
+              top: "-100%",
+              ease: Expo.easeInOut
+            });
+
+     TweenMax.to('.second', 1.5, {
+              delay: .7,
+              top: "-100%",
+              ease: Expo.easeInOut
+            });
+      TweenMax.to('.third', 1.5, {
+              delay: .9,
+              top: "-100%",
+              ease: Expo.easeInOut
+            });
+
+      TweenMax.from(".slider", 1.5, {
+              delay: 2,
+              opacity:0,
+              x: "-200",
+              ease: Expo.easeInOut
+        });
+
+      // NAVBAR
+            TweenMax.staggerFrom(".navbar div", 1.5, {
+              delay: 1.5,
+              opacity: 0,
+              y: "20",
+              ease: Expo.easeInOut
+            }, 0.08);
+
+            // MEDIA
+            TweenMax.staggerFrom(".media ul li", 1.5, {
+              delay: 1.5,
+              opacity: 0,
+              x: "-20",
+              ease: Expo.easeInOut
+            }, 0.08);
+
+            // TEXT
+            TweenMax.from(".text h1 .hidetext", 1.5, {
+              delay: 1,
+              y: "100%",
+              ease: Expo.easeInOut
+            });
+
+            TweenMax.from(".text h3 .hidetext", 1.5, {
+              delay: 1.2,
+              y: "100%",
+              ease: Expo.easeInOut
+            });
+
+            TweenMax.from(".text p .hidetext", 1.5, {
+              delay: 1.3,
+              y: "100%",
+              ease: Expo.easeInOut
+            });
+
+            TweenMax.from(".text h2", 1.5, {
+              delay: 1.5,
+              opacity: 0,
+              x: "-10000",
+              ease: Expo.easeInOut
+            });
+
+            // SPONSOR
+            TweenMax.from(".sponsor img", 1.5, {
+              delay: 1.5,
+              opacity: 0,
+              y: "20",
+              ease: Expo.easeInOut
+            });
+
+            TweenMax.from(".sponsor p", 1.5, {
+              delay: 1.6,
+              opacity: 0,
+              y: "20",
+              ease: Expo.easeInOut
+            });
+
+            // DISTORTION
+            TweenMax.from(".distortion", 1.5, {
+              delay: 2,
+              opacity: 0,
+              y: "20",
+              ease: Expo.easeInOut
+            });
+  },
+
 }
 </script>
 
 <style scoped>
 
 .nav-section{
-    background-image: url('../../assets/bg.png');
+    background-image: url('../../assets/paintbg.png');
     background-size:cover;
+    background-color: #f5f6ff;
 }
 
 blockquote::before {
@@ -169,7 +257,7 @@ blockquote::after {
 }
 blockquote {
   quotes: "“" "”" "‘" "’";
-  color: #fff;
+  color: #686868;
   font-size: 14px;
 }
 
@@ -231,36 +319,10 @@ blockquote {
   display: inline-block;
 }
 
-.dropdown-content {
-  display: none;
-  position: absolute;
-  background-color: #f9f9f9;
-  min-width: 160px;
-  box-shadow: 0px 0px 16px 0px rgba(0,0,0,0.5);
-  padding: 10px 5px;
-  z-index: 1;
-  border-radius: 5px;
-}
 
 hr{
     margin: 4px 15px;
     opacity: 0.6;
-}
-
-.dropdown-content a{
-    font-size:10px;
-    color:#303030;
-    transition: 1s;
-    margin:10px;
-    text-transform: uppercase;
-}
-
-.dropdown-content a:hover{
-   letter-spacing: 1px;
-}
-
-.menu:hover .dropdown-content {
-  display: block;
 }
 
 button{
@@ -278,7 +340,7 @@ button{
   width: 100%;
   height: 100vh;
   overflow: hidden;
-  color:#c9c9c9;
+  color:#686868;
 }
 
 ul {
@@ -353,6 +415,7 @@ ul {
 .slider h1{
     font-size: 100px;
     text-align: center;
+    color:#303030;
 }
 
 .text h1 {
@@ -502,6 +565,7 @@ ul {
   height: 100%;
   top: 0%;
   z-index: 99;
+   animation: hue-rotate 10s linear infinite;
 }
 
 .first {

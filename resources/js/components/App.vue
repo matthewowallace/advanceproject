@@ -63,4 +63,34 @@ body::-webkit-scrollbar-thumb {
   border: 0px solid var(--scrollbarBG);
 }
 
+::placeholder{
+    color:#686868;
+}
+
+input{
+        padding: 10px 40px;
+        margin: 10px 0;
+        width: 60%;
+        box-shadow: 0px 3px 6px 0px rgba(0, 0, 0, 0.1), 0px 1px 3px 0px rgba(0, 0, 0, 0.08);
+        border: 0;
+        outline: 0;
+        border-radius: 6px;
+    }
+
+    input:focus{
+        border: 2px solid #303030;
+    }
+
+    .input-form{
+        position: relative;
+    }
+
+    .input-form img{
+        position: absolute;
+        top: 31%;
+        left: 70%;
+        max-width: 25px;
+    }
+
+
 </style>
