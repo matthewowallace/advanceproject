@@ -33,8 +33,7 @@ export default {
 }
 
   html, body{
-    background-image: url('../../assets/bg.png');
-    background-size:cover;
+    background-color:#CFD8DC;
     padding: 0;
     margin: 0;
   }

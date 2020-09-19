@@ -156,6 +156,11 @@ export default {
 
 <style scoped>
 
+.nav-section{
+    background-image: url('../../assets/bg.png');
+    background-size:cover;
+}
+
 blockquote::before {
   content: open-quote;
 }
