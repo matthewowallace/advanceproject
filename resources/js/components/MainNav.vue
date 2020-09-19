@@ -236,6 +236,14 @@ export default {
               y: "20",
               ease: Expo.easeInOut
             });
+
+             TweenMax.staggerFrom(".info img", 1.5, {
+              delay: 2,
+              opacity: 0,
+              y: "50",
+              ease: Expo.easeInOut
+            });
+
   },
 
 }

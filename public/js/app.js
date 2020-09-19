@@ -429,6 +429,12 @@ __webpack_require__.r(__webpack_exports__);
       y: "20",
       ease: Expo.easeInOut
     });
+    TweenMax.staggerFrom(".info img", 1.5, {
+      delay: 2,
+      opacity: 0,
+      y: "50",
+      ease: Expo.easeInOut
+    });
   }
 });
 
@@ -549,6 +555,33 @@ __webpack_require__.r(__webpack_exports__);
       left: "-100%",
       ease: Expo.easeInOut
     });
+    TweenMax.from(".info-1", 1.5, {
+      delay: 1.5,
+      x: "-100%",
+      ease: Expo.easeInOut
+    });
+    TweenMax.from(".info-2", 1.5, {
+      delay: 1.7,
+      x: "-100%",
+      ease: Expo.easeInOut
+    });
+    TweenMax.from(".info-3", 1.5, {
+      delay: 2,
+      x: "-100%",
+      ease: Expo.easeInOut
+    });
+    TweenMax.from(".info p", 1.5, {
+      delay: 2,
+      opacity: 0,
+      y: "50",
+      ease: Expo.easeInOut
+    });
+    TweenMax.staggerFrom(".info img", 1.5, {
+      delay: 2,
+      opacity: 0,
+      y: "50",
+      ease: Expo.easeInOut
+    }, 1);
   }
 });
 
