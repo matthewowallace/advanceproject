@@ -5,6 +5,7 @@ import MainNav from './components/MainNav.vue';
 import App from './components/App.vue';
 import Registration from './views/Auth/Registration.vue';
 import Dashboard from './views/Dashboard/Dashboard.vue';
+import Forgot from './views/Auth/Login.vue';
 
 Vue.use(Router);
 
@@ -32,6 +33,13 @@ const routes =[
         path: '/dashboard',
         name: 'Dashboard',
         component: Dashboard
+    },
+
+
+    {
+        path: '/forgot',
+        name: 'Forgot',
+        component: Forgot
     }
 ]
 

@@ -1,6 +1,5 @@
 <template>
     <div class="wrapper">
-
           <!-- OVERLAY
             =============================== -->
          <div class="overlay first-1"></div>
@@ -28,37 +27,71 @@
             </div>
             <div class="login-form">
                 <div class="sign--form">
-                    <h3 class="sign-header">Welcome</h3>
-                    <div class="line"></div>
+                    <h3 class="sign-header">Login</h3>
+                    <!-- <div class="line"></div> -->
                     <p class="sign-para">Sign in to continue to our application</p>
-                    <form class="form-1">
+                    <form class="form-1" @submit="checkForm" action="/" method="post" novalidate="true">
                         <div class="input-form">
                             <input placeholder="Enter your email address">
                             <img src="../../../assets/icons/person-circle-outline.svg" alt="user-icon">
                         </div>
                         <div class="input-form">
-                            <input placeholder="Enter your Password" type="password">
+                            <input placeholder="Enter your Password" type="password" name="email" id="email" v-model="email">
                             <img src="../../../assets/icons/eye-outline.svg" alt="user-icon">
                         </div>
                        <div class="forgot">
                            <a>Forgot Password ?</a>
                         </div>
+                        <p>
+                            <ul>
+                                 <!-- <li v-for="error in errors">{{ error }}</li> -->
+                            </ul>
+                        </p>
                         <div class="login-btn">
-                            <button>Sign in</button>
+                            <button type="submit" value="Submit">Sign in</button>
                         </div>
-                         <div class="Signup"><p>Dont have an account <a>Sign up</a> </p></div>
+                         <div class="Signup">
+                        <p>Dont have an account
+                             <router-link to="/registration" exact>
+                                  <a>Sign up</a>
+                             </router-link>
+                        </p></div>
                     </form>
                 </div>
             </div>
-        </div>
         </div>
     </div>
 </template>
 
 <script>
 export default {
-     mounted: function(){
 
+    data:{
+        errors:[],
+        password:null,
+        email:null,
+    },
+
+    methods:{
+        // checkForm:function(e) {
+        // this.errors = [];
+
+        // if(!this.email) {
+        //     this.errors.push("Email required.");
+        // } else if(!this.validEmail(this.email)) {
+        //     this.errors.push("Valid email required.");
+        // }
+        // if(!this.errors.length) return true;
+        // e.preventDefault();
+        // },
+        // validEmail:function(email) {
+        // var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+        // return re.test(email);
+        // }
+    },
+
+
+     mounted: function(){
             TweenMax.to(".first-1", 1.5, {
               delay: .5,
               left: "-100%",
@@ -116,7 +149,7 @@ export default {
     .login{
         display: flex;
         flex-wrap: wrap;
-        background-color: #f5f6ff;
+        background-color: #fbfbfd;;
     }
     .login-info{
         display: flex;
@@ -260,16 +293,16 @@ export default {
     }
 
     .first-1 {
-        background:#452c63;
+        background:#df4968;
     }
 
     .second-1 {
-        background:#452c63;
+        background:#df4968;
         left: 33.3%;
     }
 
     .third-1 {
-        background: #452c63;
+        background: #df4968;
         left: 66.6%;
     }
 

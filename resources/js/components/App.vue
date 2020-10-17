@@ -22,6 +22,7 @@ export default {
 </script>
 
 <style>
+
     #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -31,9 +32,8 @@ export default {
   margin-top: 0px;
 
 }
-
   html, body{
-    background-color:#CFD8DC;
+    background-color:#FFF;
     padding: 0;
     margin: 0;
   }
@@ -92,5 +92,9 @@ input{
         max-width: 25px;
     }
 
+    a{
+        text-decoration: none;
+        list-style: none;
+    }
 
 </style>

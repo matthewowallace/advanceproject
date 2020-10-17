@@ -81,51 +81,32 @@
 
             <!-- TEXT
             =============================== -->
-            <div class="text">
-            <h1>
-                <span class="hidetext">Youth</span>
-            </h1>
-            <h2>Creator</h2>
-            <h3>
-                <span class="hidetext">2020<br></span>
-            </h3>
-            <p>
-                <span class="hidetext subtext">
-                   <blockquote>
-                      The Question isn't Who is Going To Let Me; It's Who is Going To Stop Me <br>- Ayn Rand
-                   </blockquote>
-                </span>
-            </p>
+            <div class="Header-Text">
+                <h1>
+                    learn the art & business<br> of web design
+                </h1>
+            </div>
+            <div class="Slider">
+                <Slider />
+            </div>
+            <div class="land-img">
+                <div class="overflow-img">
+                </div>
             </div>
 
-            <div class="slider">
-                <div class="uk-position-relative uk-visible-toggle uk-light" tabindex="-1" uk-slider="center: true">
-                    <ul class="uk-slider-items uk-grid">
-                        <li class="uk-width-1-1">
-                            <div class="uk-panel">
-                                <h1>Create</h1>
-                            </div>
-                        </li>
-                        <li class="uk-width-1-1">
-                            <div class="uk-panel">
-                                <h1>Innovate</h1>
-                            </div>
-                        </li>
-                        <li class="uk-width-1-1">
-                            <div class="uk-panel">
-                                <h1>Grow</h1>
-                            </div>
-                        </li>
-                    </ul>
-
-                    <a class="uk-position-center-left uk-position-small uk-hidden-hover" href="#" uk-slidenav-previous uk-slider-item="previous"></a>
-                    <a class="uk-position-center-right uk-position-small uk-hidden-hover" href="#" uk-slidenav-next uk-slider-item="next"></a>
-                 </div>
-                  <router-link to="/login" exact>
-                    <div class="getstarted">
-                        <a>Get Started</a>
-                    </div>
-                  </router-link>
+            <div class="Subheader-Text">
+             <div>
+                <p class="subtitle">
+                   You bring the creativity and passion.
+                   We teach you the skills you need to succeed as a freelance web designer.
+                   It all happens online, no matter where you are.
+                </p>
+             </div>
+             <router-link to="/login" exact>
+                 <div class="getstarted">
+                     <a>getstarted</a>
+                </div>
+            </router-link>
             </div>
 
             <!-- SPONSOR
@@ -145,7 +126,13 @@
 
 <script>
 
+import Slider from '../components/components/slider'
+
 export default {
+
+   components :{
+         Slider,
+      },
 
   mounted: function(){
      TweenMax.to('.first', 1.5, {
@@ -173,7 +160,7 @@ export default {
         });
 
       // NAVBAR
-            TweenMax.staggerFrom(".navbar div", 1.5, {
+      TweenMax.staggerFrom(".navbar div", 1.5, {
               delay: 1.5,
               opacity: 0,
               y: "20",
@@ -181,7 +168,7 @@ export default {
             }, 0.08);
 
             // MEDIA
-            TweenMax.staggerFrom(".media ul li", 1.5, {
+     TweenMax.staggerFrom(".media ul li", 1.5, {
               delay: 1.5,
               opacity: 0,
               x: "-20",
@@ -189,25 +176,32 @@ export default {
             }, 0.08);
 
             // TEXT
-            TweenMax.from(".text h1 .hidetext", 1.5, {
-              delay: 1,
+     TweenMax.from(".Header-Text h1", 1.5, {
+              delay: 1.5,
+              opacity:0,
               y: "100%",
               ease: Expo.easeInOut
             });
 
-            TweenMax.from(".text h3 .hidetext", 1.5, {
+     TweenMax.from(".text h3 .hidetext", 1.5, {
               delay: 1.2,
               y: "100%",
               ease: Expo.easeInOut
             });
 
-            TweenMax.from(".text p .hidetext", 1.5, {
+    TweenMax.from(".text h3 .hidetext", 1.5, {
+              delay: 1.2,
+              y: "100%",
+              ease: Expo.easeInOut
+            });
+
+     TweenMax.from(".text p .hidetext", 1.5, {
               delay: 1.3,
               y: "100%",
               ease: Expo.easeInOut
             });
 
-            TweenMax.from(".text h2", 1.5, {
+     TweenMax.from(".text h2", 1.5, {
               delay: 1.5,
               opacity: 0,
               x: "-10000",
@@ -215,14 +209,14 @@ export default {
             });
 
             // SPONSOR
-            TweenMax.from(".sponsor img", 1.5, {
+     TweenMax.from(".sponsor img", 1.5, {
               delay: 1.5,
               opacity: 0,
               y: "20",
               ease: Expo.easeInOut
             });
 
-            TweenMax.from(".sponsor p", 1.5, {
+     TweenMax.from(".sponsor p", 1.5, {
               delay: 1.6,
               opacity: 0,
               y: "20",
@@ -230,20 +224,12 @@ export default {
             });
 
             // DISTORTION
-            TweenMax.from(".distortion", 1.5, {
+     TweenMax.from(".distortion", 1.5, {
               delay: 2,
               opacity: 0,
               y: "20",
               ease: Expo.easeInOut
             });
-
-             TweenMax.staggerFrom(".info img", 1.5, {
-              delay: 2,
-              opacity: 0,
-              y: "50",
-              ease: Expo.easeInOut
-            });
-
   },
 
 }
@@ -251,10 +237,67 @@ export default {
 
 <style scoped>
 
+@font-face {
+    font-family: Fenotype;
+    src: url('../../assets/fonts/FenotypeBlack.otf') format("opentype");
+}
+
+.Subheader-Text{
+    position: absolute;
+    top:40%;
+    left:11%;
+}
+
+.subtitle{
+    max-width: 300px;
+}
+
+.land-img{
+    position: absolute;
+    top:30%;
+    left:55%;
+    overflow: hidden;
+}
+
+.overflow-img{
+    height: 100%;
+    width: 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-image: url('../../assets/3d.png');
+    padding: 350px 350px;
+    transition: 8s ease-in-out;
+}
+
+.overflow-img:hover{
+    transform: scale(7.0);
+   background-position: 0% 90%;
+}
+
+.Header-Text{
+    position:absolute;
+    top:10%;
+    left: 10%;
+}
+
+.Header-Text h1{
+    text-transform: uppercase;
+    font-family: 'Fenotype' !important;
+    font-size: 6vw;
+}
+
+.Slider{
+    position: absolute;
+     top:90%;
+     left: 10%;
+}
+
+
 .nav-section{
-    background-image: url('../../assets/paintbg.png');
+    /* background-image: url('../../assets/inspire.jpg');
     background-size:cover;
-    background-color: #f5f6ff;
+    background-position: 550px 30%;
+    background-repeat: no-repeat; */
 }
 
 blockquote::before {
@@ -344,7 +387,6 @@ button{
 }
 
 .nav-section{
-  font-family: 'Poppins';
   width: 100%;
   height: 100vh;
   overflow: hidden;
@@ -411,94 +453,6 @@ ul {
   margin-left: 15px;
 }
 
-.slider {
-    position: absolute;
-    top: 600px;
-    left: 73%;
-    overflow: hidden;
-    width: 500px;
-    height:200px;
-}
-
-.slider h1{
-    font-size: 100px;
-    text-align: center;
-    color:#303030;
-}
-
-.text h1 {
-  font-size: 120px;
-  text-transform: uppercase;
-  font-weight: 900;
-  letter-spacing: -10px;
-  margin-bottom: 20px;
-  color: #452c63;
-  text-shadow: 0 1px 0 #4c2f6e,
-               0 2px 0  #533579,
-               0 3px 0 #57387c,
-               0 4px 0  #4d3170,
-               0 5px 0 #53337a,
-               0 6px 1px rgba(0,0,0,.1),
-               0 0 5px rgba(0,0,0,.1),
-               0 1px 3px rgba(0,0,0,.3),
-               0 3px 5px rgba(0,0,0,.2),
-               0 5px 10px rgba(0,0,0,.25),
-               0 10px 10px rgba(0,0,0,.2),
-               0 20px 20px rgba(0,0,0,.15);
-
-  position: relative;
-  overflow: hidden;
-  height: 150px;
-  width: 600px;
-}
-.text h1 .hidetext {
-  position: absolute;
-}
-
-.text h2 {
-  position: absolute;
-  top: 40px;
-  left: -80px;
-  /* color: rgba(150,30,70,0.6); */
-    /* background: -webkit-linear-gradient(#eee, #333); */
-  background: -webkit-linear-gradient(90deg,#B0C4DE 0%, #5D8AA8 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  z-index: -1;
-  font-size: 150px;
-  font-weight: 600;
-  letter-spacing: 8px;
-  text-transform: uppercase;
-}
-
-.text h3 {
-  font-size: 70px;
-  text-transform: uppercase;
-  font-weight: 600;
-  line-height: 1;
-  color: #452c63;
-  margin-top: 35px;
-   text-shadow: 0 1px 0 #4c2f6e,
-               0 2px 0  #533579,
-               0 3px 0 #57387c,
-               0 4px 0  #4d3170,
-               0 5px 0 #53337a,
-               0 6px 1px rgba(0,0,0,.1),
-               0 0 5px rgba(0,0,0,.1),
-               0 1px 3px rgba(0,0,0,.3),
-               0 3px 5px rgba(0,0,0,.2),
-               0 5px 10px rgba(0,0,0,.25),
-               0 10px 10px rgba(0,0,0,.2),
-               0 20px 20px rgba(0,0,0,.15);
-
-
-  position: relative;
-  overflow: hidden;
-  height: 150px;
-}
-.text h3 .hidetext {
-  position: absolute;
-}
 
 .text p {
   width: 200px;
@@ -517,7 +471,6 @@ ul {
 .getstarted{
     position: relative;
     margin-top: 40px;
-    margin-left: 160px;
     z-index: 1;
 }
 
@@ -525,13 +478,19 @@ ul {
     padding: 10px 55px;
     border: 1px solid #452c63;
     transition: 1s ease-in-out;
-     animation: hue-rotate 10s linear infinite;
+    animation: hue-rotate 10s linear infinite;
+    font-family: 'Fenotype' !important;
+    font-size: 24px;
+    text-transform: uppercase;
+    text-decoration: none;
+    list-style: none;
 }
 
 .getstarted a:hover{
     padding: 10px 55px;
     background-color: #452c63;
     animation: hue-rotate 10s linear infinite;
+    text-decoration: none;
 }
 /* SPONSOR
 =========================== */
@@ -626,5 +585,7 @@ a{
     background-color: #452c63;
     animation: hue-rotate 10s linear infinite;
 }
+
+
 
 </style>
