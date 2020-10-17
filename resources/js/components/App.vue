@@ -13,6 +13,8 @@ import Body from "./Body";
 import getStarted from "./getStarted";
 export default {
 
+     name:"App",
+
       components :{
          MainNav,
          Body,
